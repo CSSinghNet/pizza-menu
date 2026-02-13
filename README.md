@@ -1,70 +1,174 @@
-# Getting Started with Create React App
+# 🍕 ReactJS Basics -- Learning README
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains my learning and implementation of core ReactJS
+concepts while building a Pizza Menu UI.
 
-## Available Scripts
+------------------------------------------------------------------------
 
-In the project directory, you can run:
+## 📌 Topics Covered
 
-### `npm start`
+-   Component
+-   Props
+-   React Fragment
+-   Basic React Structure
+-   Ternary Operator
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+------------------------------------------------------------------------
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## ⚛️ 1. Component in React
 
-### `npm test`
+Components are the building blocks of a React application.\
+They allow us to split the UI into independent, reusable pieces.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Example:
 
-### `npm run build`
+``` jsx
+function Pizza() {
+  return <h2>Margherita Pizza</h2>;
+}
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+export default Pizza;
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Types of Components
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-   Functional Components (Modern & recommended)
+-   Class Components (Legacy)
 
-### `npm run eject`
+------------------------------------------------------------------------
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 📦 2. Props (Properties)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Props are used to pass data from parent component to child component.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Example:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+``` jsx
+function Pizza(props) {
+  return <h2>{props.name}</h2>;
+}
 
-## Learn More
+function App() {
+  return <Pizza name="Pepperoni" />;
+}
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Props are: - Read-only - Used for data sharing - Passed from parent →
+child
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+------------------------------------------------------------------------
 
-### Code Splitting
+## 🧩 3. React Fragment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+React Fragment allows grouping multiple elements without adding extra
+DOM nodes.
 
-### Analyzing the Bundle Size
+### Example:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+``` jsx
+import React from "react";
 
-### Making a Progressive Web App
+function Menu() {
+  return (
+    <>
+      <h1>Pizza Menu</h1>
+      <p>Choose your favorite pizza</p>
+    </>
+  );
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+It works like Angular's ng-container.
 
-### Advanced Configuration
+------------------------------------------------------------------------
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🏗️ 4. Basic React Structure
 
-### Deployment
+Basic structure of a React application:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+    src/
+     ├── index.js
+   
+### index.js
 
-### `npm run build` fails to minify
+``` jsx
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
+```
+
+### App.js
+
+``` jsx
+function App() {
+  return <h1>Welcome to Pizza App</h1>;
+}
+
+export default App;
+```
+
+------------------------------------------------------------------------
+
+## ❓ 5. Ternary Operator in React
+
+Used for conditional rendering inside JSX.
+
+### Syntax:
+
+``` jsx
+condition ? trueValue : falseValue
+```
+
+### Example:
+
+``` jsx
+function Menu({ isOpen }) {
+  return (
+    <div>
+      {isOpen ? (
+        <p>We are open!</p>
+      ) : (
+        <p>Sorry, we are closed</p>
+      )}
+    </div>
+  );
+}
+```
+
+------------------------------------------------------------------------
+
+## 🚀 What I Learned
+
+-   How React components work
+-   Data passing using props
+-   Grouping JSX using Fragment
+-   Understanding React project structure
+-   Conditional rendering using ternary operator
+
+------------------------------------------------------------------------
+
+## 🛠️ Tech Stack
+
+-   ReactJS
+-   JavaScript (ES6)
+-   JSX
+-   CSS
+
+------------------------------------------------------------------------
+
+## 📈 Next Learning Steps
+
+-   State & useState
+-   Event handling
+-   Lists & keys
+-   Forms in React
+-   Hooks
+
+------------------------------------------------------------------------
+
+## 🙌 Author
+
+Learning React step by step by building real UI components.
