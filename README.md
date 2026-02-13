@@ -172,3 +172,8 @@ function Menu({ isOpen }) {
 ## 🙌 Author
 
 Learning React step by step by building real UI components.
+
+-----------------------------------------------------------------------
+
+<img width="1919" height="1062" alt="Screenshot 2026-02-13 191521" src="https://github.com/user-attachments/assets/27f2c888-59ae-443e-8d70-0b242ddec9a8" />
+
